@@ -1,0 +1,20 @@
+#profileBox{
+    border: 1px solid black;
+    padding: 5px;
+    background-color: bisque;
+    width: 180px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+body{
+    background-color: grey;
+}
+
+.field{
+    height: 30px;
+}
+
+#btn{
+    margin-top: -10px;
+}
