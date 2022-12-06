@@ -22,8 +22,9 @@ function loadProfile(){
     <div id="profilerCenter"></div>`;
 
     document.getElementById("profilerCenter").innerHTML += `
+    <h1>Movie Tickets</h1>
     <input type="text" id="name" class="field" placeholder="name"/><br/>
-    <input type="text" id="age" class="field" placeholder="age"/><br/>
+    <input type="number" id="age" class="field" placeholder="age"/><br/>
     <input type="text" id="gender" class="field" placeholder="gender"/><br/>
     <br/>
 `;
@@ -31,16 +32,22 @@ function loadProfile(){
 document.getElementById("profilerCenter").innerHTML += `
     <div>
         <button id="addbtn" onclick="addInfo()">Add</button>
-        <button id="submitbtn" onclick="sendInfo()">Submit</button>
+        <button id="submitbtn" onclick="deleteProfile()">Remove</button>
     </div>
 `;
 }
 
 
 function addInfo(){
+
     let name = document.getElementById("name").value;
     let age = document.getElementById("age").value;
     let gender = document.getElementById("gender").value;
+
+    if(name.length < 1){
+        alert("You forgot to enter a name!");
+        return;
+    }
 
     profileList.push( new Profile(name, age, gender));
 
@@ -58,17 +65,22 @@ function sideBarUpdate(){
         document.getElementById("sideBar").innerHTML += `
         <div class="profileAdded">
           ${profileList[i].name}, ${profileList[i].age}, ${profileList[i].gender}
+          <button onclick="deleteProfile(${i})">X</button>
         </div>
     `;
     }
 }
 
-
-document.getElementById("sideBar").innerHTML += btnTest();
-
-function btnTest(){
-    return "<button>Testing feature</button>";
+function deleteProfile(target){
+    profileList.splice(target,1);
+    sideBarUpdate();
 }
+
+//document.getElementById("sideBar").innerHTML += btnTest();
+
+// function btnTest(){
+//     return "<button>Testing feature</button>";
+// }
 
 
 
