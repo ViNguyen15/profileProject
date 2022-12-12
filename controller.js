@@ -142,9 +142,9 @@ function updateProfile(target){
 
 function loadNav(){
     document.getElementById("navBar").innerHTML += `
-        <div class="navItem" onclick="home()">Home</div>
+        <div class="navItem" onclick="loadHome()">Home</div>
         <div class="navItem" onclick="loadProfile()">Ticket</div>
-        <div class="navItem" onclick="">History</div>
+        <div class="navItem" onclick="">Purchase History</div>
         <div class="navItem" onclick="">Account</div>
     `;
 }
