@@ -33,8 +33,12 @@ jobs:
         echo "Hello ${{ inputs.name }}";
         
     - name: testing feature
-      run:
+      run:  |
+        touch newTestingFile.txt
+        mkdir dirX
+        mkdir "new folder"
         ls -ltr;
+        date
         
     - name: completion action
       run:
