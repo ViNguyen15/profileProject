@@ -31,5 +31,5 @@ jobs:
     - name: Send greeting
       run: 
         echo "Hello ${{ inputs.name }}";
-        ls -ltr
-        echo "testing complete"
+        ls -ltr;
+        echo "testing complete";
