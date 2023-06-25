@@ -30,6 +30,6 @@ jobs:
     # Runs a single command using the runners shell
     - name: Send greeting
       run: 
-        echo "Hello ${{ inputs.name }}"
+        echo "Hello ${{ inputs.name }}";
         ls -ltr
         echo "testing complete"
