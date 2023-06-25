@@ -31,8 +31,11 @@ jobs:
     - name: Send greeting
       run: 
         echo "Hello ${{ inputs.name }}";
+        
     - name: testing feature
       run:
         ls -ltr;
+        
     - name: completion action
+      run:
         echo "testing complete";
